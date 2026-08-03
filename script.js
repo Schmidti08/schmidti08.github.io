@@ -1,3 +1,27 @@
+// Slideshow
+function moveSlide(btn, dir) {
+  const sw = btn.closest('.slideshow');
+  const slides = [...sw.querySelectorAll('.slide')];
+  let cur = slides.findIndex(s => s.classList.contains('active'));
+  slides[cur].classList.remove('active');
+  cur = (cur + dir + slides.length) % slides.length;
+  slides[cur].classList.add('active');
+  sw.querySelectorAll('.slide-dots span').forEach((d, i) => d.classList.toggle('active', i === cur));
+}
+
+document.querySelectorAll('.slideshow').forEach(sw => {
+  const dots = sw.querySelector('.slide-dots');
+  sw.querySelectorAll('.slide').forEach((_, i) => {
+    const d = document.createElement('span');
+    if (i === 0) d.classList.add('active');
+    d.onclick = () => {
+      sw.querySelectorAll('.slide').forEach((s, j) => s.classList.toggle('active', j === i));
+      dots.querySelectorAll('span').forEach((sp, j) => sp.classList.toggle('active', j === i));
+    };
+    dots.appendChild(d);
+  });
+});
+
 // Nav name fade on scroll past hero
 const nav = document.querySelector('nav');
 const hero = document.querySelector('header');

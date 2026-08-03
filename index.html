@@ -75,10 +75,13 @@
           <span>CAD</span>
           <span>Rapid Prototyping</span>
         </div>
-        <div class="project-gallery">
-          <img src="Bilder/Bilder 3D-Druck/IMG_6848.jpg" alt="CAD-Assembly Porsche 911 Silhouette in Solid Edge" class="project-img gallery-wide" />
-          <img src="Bilder/Bilder 3D-Druck/IMG_7014.jpg" alt="CAD-Modell Handyständer in Solid Edge" class="project-img" />
-          <img src="Bilder/Bilder 3D-Druck/IMG_7015.jpg" alt="CAD-Modell Porsche Schriftzug in Solid Edge" class="project-img" />
+        <div class="slideshow">
+          <button class="slide-btn prev" onclick="moveSlide(this, -1)">&#8592;</button>
+          <img src="Bilder/Bilder 3D-Druck/IMG_6848.jpg" alt="CAD-Assembly Porsche 911 Silhouette in Solid Edge" class="slide active" />
+          <img src="Bilder/Bilder 3D-Druck/IMG_7014.jpg" alt="CAD-Modell Handyständer in Solid Edge" class="slide" />
+          <img src="Bilder/Bilder 3D-Druck/IMG_7015.jpg" alt="CAD-Modell Porsche Schriftzug in Solid Edge" class="slide" />
+          <button class="slide-btn next" onclick="moveSlide(this, 1)">&#8594;</button>
+          <div class="slide-dots"></div>
         </div>
       </div>
 
